@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+      <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>F2 Field Inventory — ASU Student Club Application</title>
+            <style>
+            :root {
+                   color-scheme: light;
+            }
+            * { 
+                  box-sizing: border-box;
+            }
+            body { 
+                  margin: 0 auto;
+                  padding: 1rem;
+                  max-width: 90rem;
+                  color: #262626;
+                  font: 1rem/1.55 system-ui, sans-serif;
+            }
+            h1 { 
+                  line-height: 1.2;
+            }
+            p { 
+                  max-width: 75ch;
+            }
+            .table-wrap {
+                  overflow-x: auto;
+            }
+            table { 
+                  width: 100%;
+                  border-collapse: collapse;
+            }
+            th, td {
+                  padding: .7rem;
+                  border: 1px solid #9ba1a8;
+                  text-align: left;
+                  vertical-align: top;
+                  min-width: 9rem;
+            }
+            th { 
+                  background: #f0f2f4;
+            }
+            caption { 
+                  text-align: left;
+                  padding: .5rem 0;
+                  font-weight: 700;
+            }
+            </style>
+            </head>
+            <body>
+                  <h1>F2 · Task and Data Plan: ASU Student Club Application</h1>
+                  <p>The form contains 10 purposeful controls, including a radio group and checkboxes. This is a fictional front-end prototype; it does not transmit or store information.</p>
+                  <div class="table-wrap">
+                        <table>
+                              <caption>Field inventory — one row per planned control</caption>
+                              <thead>
+                                    <tr>
+                                          <th>Visible label / question</th>
+                                          <th>Why necessary now?</th>
+                                          <th>Required?</th>
+                                          <th>Native control/type</th>
+                                          <th>Submitted name/value</th>
+                                          <th>Autocomplete/inputmode</th>
+                                          <th>Constraint/instruction</th>
+                                          <th>Sensitivity and minimization decision</th>
+                                    </tr>
+                              </thead>
+                              <tbody>
+                                    <tr>
+                                          <td>Name (required)</td>
+                                          <td>Lets the club officers address the attendee and match the request.</td>
+                                          <td>Yes</td>
+                                          <td>input type=text</td>
+                                          <td>name = attendee-entered fictional name</td>
+                                          <td>autocomplete=name</td>
+                                          <td>2–80 characters; no rigid name pattern.</td>
+                                          <td>Personal data. Use fictional names in tests; no legal name is needed for this prototype.</td>
+                                    </tr>
+                                    <tr>
+                                          <td>Email address (required)</td>
+                                          <td>Provides a reply route for the registration request.</td>
+                                          <td>Yes</td>
+                                          <td>input type=email</td>
+                                          <td>email = attendee-entered fictional email</td>
+                                          <td>autocomplete=email</td>
+                                          <td>Browser email syntax; max 254 characters; example john@test.com</td>
+                                          <td>Contact information. Do not use a real address or send data.</td>
+                                    </tr>
+                                    <tr>
+                                          <td>Preferred contact method (required)</td>
+                                          <td>Lets the club officers  know how a real follow-up should be made.</td>
+                                          <td>Yes</td><td>select</td><td>contact_method = email or phone</td>
+                                          <td>N/A</td>
+                                          <td>Must choose Email or Phone; blank prompt is not valid.</td>
+                                          <td>Communication preference; no phone number is collected.</td>
+                                    </tr>
+                                    <tr>
+                                          <td>Club of interest (required)</td>
+                                          <td>Identifies which club the applicant wants to join.</td>
+                                          <td>Yes</td>
+                                          <td>select</td>
+                                          <td>club = game-development / design / photography / outdoor-adventure</td>
+                                          <td>N/A</td>
+                                          <td>Choose one listed club.</td>
+                                          <td>Low sensitivity; choices are limited to the purpose of the form.</td>
+                                    </tr>
+                                    <tr>
+                                          <td>Preferred session (required)</td>
+                                          <td>Helps club officers understand which meeting format/time may work.</td>
+                                          <td>Yes</td>
+                                          <td>radio group</td>
+                                          <td>session = weekday-evening / saturday-morning / online</td>
+                                          <td>N/A</td>
+                                          <td>One radio choice is required.</td>
+                                          <td>Scheduling preference; no additional schedule details requested.</td>
+                                    </tr>
+                                    <tr>
+                                          <td>Number of attendees (required)</td>
+                                          <td>Helps the club estimate participation for planning.</td>
+                                          <td>Yes</td>
+                                          <td>input type=number</td>
+                                          <td>attendees = integer 1–4</td>
+                                          <td>inputmode=numeric</td>
+                                          <td>Required; minimum 1, maximum 4, step 1; includes the submitter.</td>
+                                          <td>Low sensitivity; cap limits unnecessary group details.</td>
+                                    </tr>
+                                    <tr>
+                                          <td>Accessibility or participation support</td>
+                                          <td>Allows the club to follow up about participation support without asking for a diagnosis.</td>
+                                          <td>No</td>
+                                          <td>input type=checkbox</td>
+                                          <td>support_requested = yes when checked</td>
+                                          <td>N/A</td>
+                                          <td>Optional checkbox; unchecked value is not submitted.</td>
+                                          <td>Potentially sensitive if elaborated. Ask only whether follow-up is wanted.</td>
+                                    </tr>
+                                    <tr>
+                                          <td>Experience level</td>
+                                          <td>Helps officers understand whether the applicant is new to the club&#x27;s activities</td>
+                                          <td>No</td>
+                                          <td>select</td>
+                                          <td>experience = beginner / some-experience / experienced; blank = prefer not to say</td>
+                                          <td>N/A</td>
+                                          <td>Optional; can remain blank.</td>
+                                          <td>Low sensitivity; optional and broad categories only.</td>
+                                    </tr>
+                                    <tr>
+                                          <td>Anything else the club officers should know?</td>
+                                          <td>Allows brief practical context not covered by choices.</td>
+                                          <td>No</td><td>textarea</td>
+                                          <td>notes = attendee-entered text</td>
+                                          <td>N/A</td>
+                                          <td>Optional; max 500 characters; instruction says no sensitive details.</td>
+                                          <td>Free text can reveal sensitive data; optional, limited, and discouraged for private details.</td>
+                                    </tr>
+                                    <tr>
+                                          <td>Future club event updates</td>
+                                          <td>Separates optional future-news interest from this request.</td>
+                                          <td>No</td>
+                                          <td>input type=checkbox</td>
+                                          <td>updates = yes when checked</td>
+                                          <td>N/A</td>
+                                          <td>Optional checkbox; unchecked value is not submitted.</td>
+                                          <td>Contact preference. Do not use it as consent to unrelated messages.</td>
+                                    </tr>
+                              </tbody>
+                        </table>
+                  </div>
+                  <p><a href="index.html">Return to the registration form</a></p>
+            </body>
+            </html>

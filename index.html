@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASU Student Club Application</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to form</a>
+  <header class="page-header">
+    <div class="header-inner">
+      <p class="eyebrow">ASU Student Life · Application </p>
+      <h1>ASU Student Club Application</h1>
+      <p class="lede">Use this prototype to apply to join a student club at Arizona State University. It is designed for students who want to attend a on campus club and takes about 3 minutes to complete.</p>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="expectations" class="intro panel">
+      <h2>F1 · Purpose and Expectations</h2>
+      <p>Complete this form to tell the club officers which club you would like to join and how to contact you about the request.</p>
+      <ul>
+        <li><strong>Time:</strong> About 3 minutes.</li>
+        <li><strong>Required fields:</strong> Marked “(required)”. All other fields are optional.</li>
+        <li><strong>After submission:</strong> In a real service, the club officers would review the request and email next steps.</li>
+        <li><strong>Privacy:</strong> Do not enter real personal information. Use fictional details for testing. No information is collected by this prototype.</li>
+      </ul>
+    </section>
+
+    <form action="#" method="post">
+      <p class="required-note"><span aria-hidden="true">*</span> Required fields are marked “(required)”.</p>
+      <fieldset>
+        <legend>F3 · Contact information</legend>
+        <p class="help">Provide only the information needed to respond to this workshop request.</p>
+        <div class="paired-fields">
+          <div class="field">
+            <label for="name">Name (required)</label>
+            <input id="name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="80">
+            <p class="help">Enter the name you want the club officers to use.</p>
+          </div>
+          <div class="field">
+            <label for="email">Email address (required)</label>
+            <input id="email" name="email" type="email" autocomplete="email" required maxlength="254" aria-describedby="email-help">
+            <p class="help" id="email-help">Example: john@test.com</p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="contact-method">Preferred contact method (required)</label>
+          <select id="contact-method" name="contact_method" required>
+            <option value="">Choose a method</option>
+            <option value="email">Email</option>
+            <option value="phone">Phone</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>F3 · Club preferences</legend>
+        <div class="field">
+          <label for="club">Club of interest (required)</label>
+          <select id="club" name="workshop" required>
+            <option value="">Choose a club</option>
+            <option value="game-development">Game Development Club</option>
+            <option value="design">Design Club</option>
+            <option value="photography">Photography Club</option>
+            <option value="outdoor-adventure">Outdoor Adventure Club</option>
+          </select>
+        </div>
+        <div class="field">
+          <span class="field-label">Preferred session (required)</span>
+          <p class="help" id="session-help">Choose the session that best fits your schedule.</p>
+          <label class="choice"><input type="radio" name="session" value="weekly-meeting" required> Weekly meeting</label>
+          <label class="choice"><input type="radio" name="session" value="weekend-event"> Weekend event</label>
+          <label class="choice"><input type="radio" name="session" value="online"> Online meeting</label>
+        </div>
+        <div class="field">
+          <label for="meeting_attendance">Expected meeting attendance (required)</label>
+          <input id="meeting_attendance" name="meeting_attendance" type="number" min="1" max="4" step="1" value="1" required inputmode="numeric">
+          <p class="help">Enter a whole number from 1 to 4, including yourself.</p>
+        </div>
+        <div class="field">
+          <span class="field-label">Accessibility or participation support</span>
+          <label class="choice"><input type="checkbox" name="support_requested" value="yes"> I would like the club officers to follow up about participation support.</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>F3 · Application details</legend>
+        <div class="field">
+          <label for="experience_level">Relevant experience_level level</label>
+          <select id="experience_level" name="experience_level">
+            <option value="">Prefer not to say</option>
+            <option value="beginner">Beginner</option>
+            <option value="some-experience">Some experience</option>
+            <option value="experienced">Experienced</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="notes">Anything else the club officers should know?</label>
+          <textarea id="notes" name="notes" rows="4" maxlength="500" aria-describedby="notes-help"></textarea>
+          <p class="help" id="notes-help">Optional. Up to 500 characters..</p>
+        </div>
+        <div class="field">
+          <label class="choice"><input type="checkbox" name="updates" value="yes"> I would like to hear about future club events.</label>
+        </div>
+      </fieldset>
+
+      <section id="validation" class="panel">
+        <h2>F4 · Requirements and Validation</h2>
+        <p>Complete all fields marked required. Choose a club and preferred meeting time, use an email address such as <code>john@test.com</code>, and enter an expected attendance count from 1 through 4. The browser checks required fields, email format, and the numeric range before allowing a submission attempt.</p>
+      </section>
+      <button type="submit">Submit club application</button>
+    </form>
+
+    <section id="states" class="panel">
+      <h2>F5 · State and Recovery Specimen</h2>
+      <div class="state-grid">
+        <article class="state-card">
+          <h3>Default</h3>
+          <p>Fields begin empty, except the attendee count defaults to 1. Help text appears before entry.</p>
+        </article>
+        <article class="state-card focus-demo">
+          <h3>Focus</h3>
+          <p>Keyboard focus has a high-contrast gold outline. Use Tab and Shift+Tab to move between controls.</p>
+        </article>
+        <article class="state-card">
+          <h3>Required</h3>
+          <p>Required fields say “(required)” and use the native <code>required</code> attribute. The browser identifies missing values on submission.</p>
+        </article>
+        <article class="state-card valid-demo">
+          <h3>Valid</h3>
+          <label for="valid-example">Example email · valid specimen</label>
+          <input id="valid-example" type="email" value="john@test.com" readonly>
+          <p>Example format is shown; the field is read-only to keep this specimen separate from the form.</p>
+        </article>
+        <article class="state-card field-error">
+          <h3>Invalid</h3>
+          <label for="invalid-example">Email address · invalid specimen</label>
+          <input id="invalid-example" type="email" value="john.test" aria-invalid="true" aria-describedby="invalid-message" readonly>
+          <p id="invalid-message" class="error-message"><strong>Error:</strong> Enter an email address in the format name@example.com. Keep your other entries and correct this field.</p>
+        </article>
+        <article class="state-card">
+          <h3>Disabled</h3>
+          <label for="disabled-example">Unavailable option · specimen</label>
+          <input id="disabled-example" type="text" value="Registration closed (example)" disabled>
+          <p>Disabled controls are visibly muted and cannot be edited.</p>
+        </article>
+      </div>
+      <div class="error-summary" role="note">
+        <h3>Static server-returned error example</h3>
+        <p><strong>We could not process this fictional request.</strong> The email address needs attention. Review the field labeled “Email address · invalid specimen,” enter a complete address such as <code>john@test.com</code>, and try again. Your other entries should remain in place.</p>
+      </div>
+    </section>
+
+    <section id="documentation" class="panel">
+      <h2>F2 · Task and Data Plan</h2>
+      <p>The completed <a href="field-inventory-template.html">field inventory</a> explains each control, why it is needed, whether it is required, its submitted name/value, autocomplete or input mode, constraints, and data-minimization decision.</p>
+
+      <h2>F6 · System and Evidence</h2>
+      <h3>Design system</h3>
+      <p>This page extends a compact design system with CSS custom properties for color, spacing, radius, and readable line length; a responsive paired-field layout; visible keyboard focus; error styling with text and color. At narrow widths, paired fields stack into one column.</p>
+      <h3>Fictional test-data list</h3>
+      <ul>
+        <li>Name: John Test</li>
+        <li>Email: john@test.com</li>
+        <li>Club: Game Development Club</li>
+        <li>Session: Weekend event</li>
+        <li>Expected meeting attendance: 1</li>
+        <li>Notes: “I am interested in beginner-friendly club activities.”</li>
+      </ul>
+    </section>
+  </main>
+  <footer><p>ASU Student Club Application · Front-end assessment prototype · No data is collected</p></footer>
+</body>
+</html>
